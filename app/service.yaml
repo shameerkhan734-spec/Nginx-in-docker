@@ -2,10 +2,12 @@ apiVersion: v1
 kind: Service
 metadata:
   name: baby-toy-service
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
 spec:
   type: LoadBalancer
   selector:
-    app: baby-toy-website
+    app: website
   ports:
   - port: 80
     targetPort: 80
