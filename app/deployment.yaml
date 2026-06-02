@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: website
-        image: shameerkhan1220/website:latest
+        image: shameer1220/website:latest
         ports:
         - containerPort: 80
