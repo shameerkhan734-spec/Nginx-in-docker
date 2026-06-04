@@ -1,13 +1,13 @@
+cat > service.yaml <<EOF
 apiVersion: v1
 kind: Service
 metadata:
-  name: baby-toy-service
-  annotations:
-    service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
+  name: myapp-service
 spec:
-  type: LoadBalancer
   selector:
-    app: website
+    app: myapp
+  type: LoadBalancer
   ports:
   - port: 80
     targetPort: 80
+EOF
