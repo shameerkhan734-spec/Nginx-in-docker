@@ -1,13 +1,13 @@
-cat > service.yaml <<EOF
 apiVersion: v1
 kind: Service
 metadata:
-  name: myapp-service
+  name: web-service
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
 spec:
-  selector:
-    app: myapp
   type: LoadBalancer
+  selector:
+    app: web
   ports:
-  - port: 80
-    targetPort: 80
-EOF
+    - port: 80
+      targetPort: 80
